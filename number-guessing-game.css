@@ -1,0 +1,37 @@
+#include <iostream> 
+#include <cstdlib>
+#include <ctime>
+
+using namespace std
+
+int main() { 
+    srand(time(0)); 
+    int randomNumber = (rand() % (10 - 1 + 1)) + 1;
+    int attemptsLeft = 3;
+    int y;
+    cout << "Between 1 to 10, make a guess of what number the answer will be:";
+
+    while(true) {
+        if (attemptsLeft == 0) {
+            cout << "You have no attempts left. The answer was " << randomNumber << ".\nPress any key to stop.";
+            cin >> y;
+            abort();
+        } else {
+            cout << "You have " << attemptsLeft << " attempt(s) left.\nYour Answer: ";
+            int x;
+            cin >> x;
+            if (x == randomNumber) {
+                cout << "Congratulations! The answer was " << randomNumber << "!\nYour answer was " << x << ".\nPress any key to stop.";
+                cin >> y;
+                abort();
+            }
+            if (x > randomNumber) {
+                cout << "Your answer is too high!\n";
+            }
+            if (x < randomNumber) {
+                cout << "Your answer is too low!\n";
+            }
+        }
+        attemptsLeft = attemptsLeft - 1;
+    }
+}
