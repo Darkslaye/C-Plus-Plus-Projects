@@ -1,2 +1,2 @@
-# C-Plus-Plus-Projects
-Personal projects developed in C++. 
+# Class-Projects
+Completed assignments for programming classes.  
